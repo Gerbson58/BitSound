@@ -30,28 +30,29 @@ artistsData.forEach( artist => {
     const artistCard = document.createElement('div')
     artistCard.classList.add('artist-card')
 
-artistCard.innerHTML =
-    <img src="${artist.image}" alt="imagem do ${artist.name}">
+    artistCard.innerHTML =
+        <img src="${artist.image}" alt="imagem do ${artist.name}">
+    <   div>
+            <h3>${artist.name}</h3>
+            <p>${artista}</p>         
+        </div>
 
-    <h3>${artist.name}</h3>
-    <p>{artista}</p>         
-   
-    artist.Grid.appendChild(artistCard)
+    artistGrid.appendChild(artistCard)
 }) 
 
-albumsData.forEach( album => {
-    const albumCard = document.createElement('div')
-    albumCard.classList.add('album-card')
+    albumsData.forEach( album => {
+        const albumCard = document.createElement('div')
+        albumCard.classList.add('album-card')
 
-albumCard.innerHTML =
+    albumCard.innerHTML =
     <img src="${album.image}" alt="imagem do ${album.name}">
-        <div>
-            <h3>${album.name}</h3>
-            <p>{album.artist}</p>
-        </div>
+    <div>
+        <h3>${album.name}</h3>
+        <p>${album.artist}</p>
+    </div>
             
     
-    artist.Grid.appendChild(albumCard)
+    artistGrid.appendChild(albumCard)
     
     
 
