@@ -50,8 +50,10 @@ body {
 .nav-playlist p, .nav-podcast p {
     font-size: 12px;
 }
-.nav-footer a {
-    margin-top: 
+.nav-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 main {
     padding: 24px;
@@ -101,7 +103,7 @@ main {
 .artists-card h3, .albums-card h3 {
     font-size: 10px;
 }
-.artists-card 1, .albums-card h3 {    
+.artists-card h3, .albums-card h3 {    
     font-size: 10px;
     color: #B7B3B6;
 }
