@@ -1,42 +1,50 @@
 body {
   background: #000;
   color: #fff;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
-.artists-grid, .albums-grid {
+.artists-grid,
+.albums-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
 }
 
-.artist-card, .album-card {
+.artist-card,
+.album-card {
   background: #181818;
   padding: 16px;
   border-radius: 8px;
   text-align: center;
 }
 
-.artist-card img, .album-card img {
+.artist-card img,
+.album-card img {
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 50%;
 }
-.artists-grid, .albums-grid {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+.artist-card img {
+  border-radius: 50%;
 }
 
-.artist-card, .album-card {
-    background: #222;
-    padding: 8px;
-    border-radius: 8px;
-    width: 150px;
-    text-align: center;
-    color: #fff;
+.album-card img {
+  border-radius: 8px;
+}
+.container {
+  padding: 24px;
 }
 
-.artist-card img, .album-card img {
-    width: 100%;
-    border-radius: 50%;
+header {
+  margin-bottom: 24px;
+}
+
+#searchInput {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
 }

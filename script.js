@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Gustavo Lima', image: './img/gusttavolima.jpg' },
         { name: 'Michael Jackson', image: './img/MichaelJackson1.jpg' },
         { name: 'Taylor Swift', image: './img/taylorswift.jpg' },
-        { name: 'The Beatles', image: './img/TheBeatles1.jpg' }
+        { name: 'The Beatles', image: './img/TheBeatles1.jpg' },
+        { name: 'Vanguart', image: './img/vanguart1.jpg' }
     ];
 
     const albumsData = [
@@ -15,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Gusttavo Lima In Grecce', artist: 'Gusttavo Lima', image: './img/gustavolima3.jpg' },
         { name: 'Thriller', artist: 'Michael Jackson', image: './img/MichaelJackson.jpg' },
         { name: 'Lover', artist: 'Taylor Swift', image: './img/lover.jpg' },
-        { name: 'Abbey Road', artist: 'The Beatles', image: './img/TheBeatles.jpg' }
+        { name: 'Abbey Road', artist: 'The Beatles', image: './img/TheBeatles.jpg' },
+        { name: 'Muito Mais que o amor', artist: 'Vanguart', image: './img/vanguart.jpg' }
     ];
 
     const artistsGrid = document.querySelector('.artists-grid');
@@ -52,3 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+// 👉 BOTÃO A–Z
+document.getElementById('sortAZ').addEventListener('click', () => {
+  const sorted = [...artistsData].sort((a, b) =>
+    a.name.localeCompare(b.name, 'pt-BR')
+  );
+  renderArtists(sorted);
+});
+
+// render inicial
+renderArtists(artistsData);
+
