@@ -1,50 +1,134 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
 body {
-  background: #000;
+  background-color: #121212;
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.artists-grid,
-.albums-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 16px;
-}
-
-.artist-card,
-.album-card {
-  background: #181818;
-  padding: 16px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.artist-card img,
-.album-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.artist-card img {
-  border-radius: 50%;
-}
-
-.album-card img {
-  border-radius: 8px;
-}
+/* CONTAINER */
 .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 24px;
 }
 
+/* HEADER */
 header {
   margin-bottom: 24px;
 }
 
-#searchInput {
+header input {
   width: 100%;
-  max-width: 300px;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 14px;
+  border-radius: 20px;
   border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* SECTIONS */
+section {
+  margin-bottom: 32px;
+}
+
+h2 {
+  margin-bottom: 12px;
+}
+
+/* === SCROLL HORIZONTAL === */
+.artists-grid,
+.albums-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-behavior: smooth;
+}
+
+/* SCROLLBAR (Chrome / Edge) */
+.artists-grid::-webkit-scrollbar,
+.albums-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.artists-grid::-webkit-scrollbar-track,
+.albums-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.artists-grid::-webkit-scrollbar-thumb,
+.albums-grid::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+/* CARDS */
+.artist-card,
+.album-card {
+  min-width: 160px; /* 👈 trava tamanho */
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.artist-card:hover,
+.album-card:hover {
+  background-color: #242424;
+  transform: scale(1.04);
+}
+
+/* IMAGENS */
+.artist-card img,
+.album-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* quadrado perfeito */
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* TEXTO */
+.artist-card h3,
+.album-card h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.album-card p {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+/* BOTÃO A-Z */
+#sortAZ {
+  margin: 16px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background-color: #1db954;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#sortAZ:hover {
+  opacity: 0.8;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .artist-card,
+  .album-card {
+    min-width: 130px;
+  }
 }
